@@ -8,6 +8,22 @@ const
 type
   NimIdentifier* = distinct string       ## a valid nim identifier
 
+# support for earlier nims
+when not defined(nimIdentNormalize):
+  proc nimIdentNormalize*(s: string): string =
+    result = newString(s.len)
+    if s.len > 0:
+      result[0] = s[0]
+    var j = 1
+    for i in 1..len(s) - 1:
+      if s[i] in {'A'..'Z'}:
+        result[j] = chr(ord(s[i]) + (ord('a') - ord('A')))
+        inc j
+      elif s[i] != '_':
+        result[j] = s[i]
+        inc j
+    if j != s.len: setLen(result, j)
+
 proc isValidNimIdentifier*(s: string): bool =
   ## true for strings that are valid identifier names
   if s == "_":     # special case

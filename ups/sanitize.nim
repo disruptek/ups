@@ -66,7 +66,7 @@ proc sanitizeIdentifier*(name: string; capsOkay=false): Option[NimIdentifier] =
   assert id.isValidNimIdentifier
   result = some(NimIdentifier id)
 
-proc `$`*(name: NimIdentifier): string = {.borrow.}
+proc `$`*(name: NimIdentifier): string {.borrow.}
 proc len*(name: NimIdentifier): int {.borrow.}
 
 proc `==`*(a, b: NimIdentifier): bool =

@@ -10,3 +10,10 @@ testes:
       check not bad.isValidNimIdentifier
     for good in ["_", "a", "A", "aA", "a_A", "A_9", "A9"]:
       check good.isValidNimIdentifier
+
+    check:
+      NimIdentifier"a" != NimIdentifier"A"
+      NimIdentifier"Aa" != NimIdentifier"aa"
+      NimIdentifier"aA" == NimIdentifier"aa"
+      NimIdentifier"a_A" == NimIdentifier"aA"
+      NimIdentifier"A_a" == NimIdentifier"AA"

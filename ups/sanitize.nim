@@ -1,8 +1,12 @@
+import std/hashes
 import std/options
 import std/strutils
 
 const
   nimIdentStartChars = {'a'..'z', 'A'..'Z'}  # no '_'
+
+type
+  NimIdentifier* = distinct string       ## a valid nim identifier
 
 proc isValidNimIdentifier*(s: string): bool =
   ## true for strings that are valid identifier names
@@ -29,12 +33,12 @@ template cappableAdd(s: var string; c: char) =
   else:
     s.add c
 
-proc sanitizeIdentifier*(name: string; capsOkay=false): Option[string] =
+proc sanitizeIdentifier*(name: string; capsOkay=false): Option[NimIdentifier] =
   ## convert any string to a valid nim identifier
   if name.len == 0:
-    return none(string)
+    return none(NimIdentifier)
   elif name == "_":      # special case
-    return some(name)
+    return some(NimIdentifier name)
   var id = ""
   for c in name.items:
     if c in nimIdentStartChars:
@@ -59,5 +63,20 @@ proc sanitizeIdentifier*(name: string; capsOkay=false): Option[string] =
       else:
         c = lower
 
-  if id.isValidNimIdentifier:
-    result = id.some
+  assert id.isValidNimIdentifier
+  result = some(NimIdentifier id)
+
+proc `$`*(name: NimIdentifier): string = {.borrow.}
+proc len*(name: NimIdentifier): int {.borrow.}
+
+proc `==`*(a, b: NimIdentifier): bool =
+  nimIdentNormalize(a.string) == nimIdentNormalize(b.string)
+
+proc `<`*(a, b: NimIdentifier): bool =
+  nimIdentNormalize(a.string) < nimIdentNormalize(b.string)
+
+proc hash*(name: NimIdentifier): Hash =
+  ## hash an identifier without regard to style
+  var h: Hash = 0
+  h = h !& hash(nimIdentNormalize name.string)
+  result = !$h

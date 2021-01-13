@@ -11,7 +11,7 @@ testes:
     for good in ["_", "a", "A", "aA", "a_A", "A_9", "A9"]:
       check good.isValidNimIdentifier
 
-    check:
+    check "identifiers":
       NimIdentifier"a" != NimIdentifier"A"
       NimIdentifier"Aa" != NimIdentifier"aa"
       NimIdentifier"aA" == NimIdentifier"aa"

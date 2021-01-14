@@ -1,4 +1,4 @@
-version = "0.0.3"
+version = "0.0.4"
 author = "disruptek"
 description = "a package handler"
 license = "MIT"
@@ -10,9 +10,9 @@ when false:
     requires "https://github.com/disruptek/testes >= 1.0.0 & < 2.0.0"
 
 task test, "run tests":
-  quit 0
   when false:
     when defined(windows):
       exec "testes.cmd"
     else:
       exec findExe"testes"
+  quit 0

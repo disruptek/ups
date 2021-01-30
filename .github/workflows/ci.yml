@@ -46,7 +46,7 @@ jobs:
         run: |
           cd ups
           nimble --accept develop
-          nimble --accept install "https://github.com/disruptek/balls#rc"
+          nimble --accept install "https://github.com/disruptek/balls"
           nimble test
 
       - name: Build docs

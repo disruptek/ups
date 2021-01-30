@@ -15,9 +15,23 @@ at least our hash() routines shouldn't equate AbsoluteDir to AbsoluteFile.
 when (NimMajor, NimMinor) >= (1, 1):
   proc normal*(path: string): string =
     joinPath(path, $DirSep, "")
+  # we export this for consistency with the codepath below
+  export normalizePathEnd
 else:
   proc normal*(path: string): string =
     joinPath(path, "")
+
+  proc normalizePathEnd*(path: var string; trailingSep = false) =
+    ## this is an approximation to mimic the proc exposed in nim-1.1+
+    if path != "" or trailingSep != true:
+      path = joinPath(path, "")
+      if not trailingSep and path.len > 1:
+        removeSuffix(path, DirSep)
+
+  proc normalizePathEnd*(path: string; trailingSep = false): string =
+    ## an outplace version of the above
+    result = path
+    normalizePathEnd(result, trailingSep)
 
 proc parentDir*(dir: AbsoluteDir): AbsoluteDir =
   result = dir / RelativeDir".."

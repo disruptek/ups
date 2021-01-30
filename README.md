@@ -45,6 +45,9 @@ You're welcome, buddy.  Enjoy.  😘
 
 ## Documentation
 
+This code is in an active state of development and the API is likely to change
+frequently; use the tagged releases to protect yourself accordingly.
+
 [The documentation is built during the CI process and hosted on
 GitHub.](https://disruptek.github.io/ups/ups.html)
 

@@ -1,8 +1,9 @@
-import testes
+import balls
 
 import ups/sanitize
+import ups/config
 
-testes:
+suite "package handling":
 
   block:
     ## is valid nim identifier?

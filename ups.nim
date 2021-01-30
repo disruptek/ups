@@ -1,1 +1,1 @@
-import ups/sanitize
+import ups/config

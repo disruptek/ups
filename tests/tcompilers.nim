@@ -1,6 +1,6 @@
 import std/options
 
-import ups/compiler
+import ups
 
 
 let vnim = """Nim Compiler Version 2.1.1 [Linux: amd64]
@@ -16,8 +16,6 @@ let vskull = """Nimskull Compiler Version 0.1.0-dev.21234 [linux: amd64]
 Source hash: 4948ae809f7d84ef6d765111a7cd0c7cf2ae77d2
 Source date: 2024-02-18
 """
-
-var nv: CompilerVersion
 
 block:
   let nv = parseCompilerVersion vnim

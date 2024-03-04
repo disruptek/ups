@@ -199,16 +199,16 @@ proc importName*(url: Uri): ImportName =
 
 proc forkTarget*(url: Uri): ForkTargetResult =
   result.url = normalizeUrl url
-  block success:
+  block failure:
     if not result.url.isValid:
       result.why = "url is invalid"
-      break
+      break failure
     if not result.url.isGitHub:
       result.why = "url $# does not point to github" % [ $result.url ]
-      break
+      break failure
     if result.url.path.len < 1:
       result.why = "unable to parse url $#" % [ $result.url ]
-      break
+      break failure
     # split /foo/bar into (bar, foo)
     let start = if result.url.path.startsWith("/"): 1 else: 0
     (result.owner, result.repo) = result.url.path[start..^1].splitPath

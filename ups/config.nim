@@ -533,7 +533,7 @@ proc getAllLockerRooms*(js: JsonNode): JsonNode =
     if not js.isEmpty and js.kind == JObject:
       if $LockerRooms in js:
         result = js[$LockerRooms]
-        break
+        break found
     result = newJObject()
 
 proc getLockerRoom*(js: JsonNode; name: string): JsonNode =

@@ -108,13 +108,11 @@ jobs:
           NIMSKULL_BIN: ${{ steps.nimskull.outputs.bin-path }}
 
 #     - name: Valgrind
-#       shell: bash
 #       run: |
 #         sudo apt-get update
 #         sudo apt install --fix-missing valgrind
 
       - name: Dependencies
-        shell: bash
         run: |
           nimble --accept install "https://github.com/disruptek/balls"
           nimble --accept develop
@@ -122,16 +120,12 @@ jobs:
           NIM: ${{ matrix.compiler.name }}
 
       - name: Tests
-        shell: bash
         run: |
-          cd project
-        balls --path='.' --path='$nim' --backend:c --gc:arc --gc:orc
+          balls --path='.' --path='$nim' --backend:c --gc:arc --gc:orc
 
       - name: Build Docs
         if: ${{ matrix.docs }} == 'true'
-        shell: bash
         run: |
-          cd project
           branch=${{ github.ref }}
           branch=${branch##*/}
           nimble doc --project --path="." --outdir:docs \

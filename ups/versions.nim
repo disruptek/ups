@@ -69,6 +69,7 @@ proc `$`*(v: Version): string =
   result.add '.'
   result.add $v.patch
 
+{.push warning[ImplicitDefaultValue]: off.}
 proc bumpVersion*(ver: Version; major, minor, patch = false): Option[Version] =
   ## increment the version by the specified metric;
   ## returns none() if no bump occurred
@@ -78,6 +79,7 @@ proc bumpVersion*(ver: Version; major, minor, patch = false): Option[Version] =
     result = some: Version (ver.major, ver.minor + 1'u, 0'u)
   elif patch:
     result = some: Version (ver.major, ver.minor, ver.patch + 1'u)
+{.pop.}
 
 template starOrDigits(s: string): VersionMaskField =
   ## parse a star or digit as in a version mask

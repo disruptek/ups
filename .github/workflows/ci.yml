@@ -33,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          path: ups
+          path: project
 
       - name: Setup Nim
         uses: alaviss/setup-nim@0.1.1
@@ -41,19 +41,24 @@ jobs:
           path: nim
           version: ${{ matrix.nim }}
 
-      - name: Run tests
+      - name: Dependencies
         shell: bash
         run: |
-          cd ups
-          nimble --accept develop
+          cd project
           nimble --accept install "https://github.com/disruptek/balls"
+          nimble --accept develop
+
+      - name: Tests
+        shell: bash
+        run: |
+          cd project
           balls
 
       - name: Build docs
         if: ${{ matrix.docs }} == 'true'
         shell: bash
         run: |
-          cd ups
+          cd project
           branch=${{ github.ref }}
           branch=${branch##*/}
           nimble doc --project --path="." --outdir:docs \
@@ -70,6 +75,6 @@ jobs:
           matrix.os == 'ubuntu-latest' && matrix.nim == 'devel'
         uses: crazy-max/ghaction-github-pages@v1
         with:
-          build_dir: ups/docs
+          build_dir: project/docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

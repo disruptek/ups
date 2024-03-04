@@ -10,17 +10,17 @@ import std/options
 import std/strutils
 import std/logging
 
-import compiler/ast
-import compiler/idents
-import compiler/nimconf
-import compiler/options as compileropts
-import compiler/condsyms
-import compiler/lineinfos
+import "$nim/compiler/ast"
+import "$nim/compiler/idents"
+import "$nim/compiler/nimconf"
+import "$nim/compiler/options" as compileropts
+import "$nim/compiler/condsyms"
+import "$nim/compiler/lineinfos"
 
 export compileropts
 export nimconf
 
-import npeg
+import pkg/npeg
 
 import ups/spec
 import ups/runner

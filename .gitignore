@@ -3,3 +3,4 @@ bin
 deps
 nimbledeps
 nimblemeta.json
+.tool-versions

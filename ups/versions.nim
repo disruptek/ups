@@ -4,7 +4,7 @@ import std/tables
 import std/options
 import std/logging
 
-import npeg
+import pkg/npeg
 
 import ups/spec
 

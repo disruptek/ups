@@ -1,11 +1,10 @@
-import balls
+import std/os
 
-import ups/sanitize
-import ups/config
-import ups/paths
-import os
+import pkg/balls
 
-suite "package handling":
+import ups
+
+suite "sanitizer":
 
   block:
     ## is valid nim identifier?
@@ -20,6 +19,8 @@ suite "package handling":
       NimIdentifier"aA" == NimIdentifier"aa"
       NimIdentifier"a_A" == NimIdentifier"aA"
       NimIdentifier"A_a" == NimIdentifier"AA"
+
+suite "paths":
 
   block:
     ## normalizePathEnd consistency between nim-1.0, nim-1.2+

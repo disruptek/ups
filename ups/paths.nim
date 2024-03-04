@@ -3,9 +3,9 @@ import std/hashes
 import std/os
 
 when defined(isNimSkull):
-  import compiler/utils/pathutils except toAbsoluteDir, toAbsolute
+  import "$nim/compiler/utils/pathutils" except toAbsoluteDir, toAbsolute
 else:
-  import compiler/pathutils except toAbsoluteDir, toAbsolute
+  import "$nim/compiler/pathutils" except toAbsoluteDir, toAbsolute
 export pathutils except toAbsoluteDir, toAbsolute
 
 #[

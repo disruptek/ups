@@ -52,7 +52,7 @@ jobs:
         shell: bash
         run: |
           cd project
-          balls --path="."
+          balls --path='.' --path='$nim'
 
       - name: Build docs
         if: ${{ matrix.docs }} == 'true'

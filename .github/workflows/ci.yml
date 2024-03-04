@@ -121,7 +121,7 @@ jobs:
 
       - name: Tests
         run: |
-          balls --path='.' --path='$nim' --backend:c --gc:arc --gc:orc
+          balls --path='.' --backend:c --gc:arc --gc:orc
 
       - name: Build Docs
         if: ${{ matrix.docs }} == 'true'

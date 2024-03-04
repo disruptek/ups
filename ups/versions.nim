@@ -273,11 +273,11 @@ proc acceptable*(mask: VersionMaskField; op: Operator;
     raise newException(Defect, "inconceivable!")
 
 proc at*[T: Version | VersionMask](version: T; index: VersionIndex): auto =
-  ## like [int] but clashless
+  ## an indexing operator which cannot clash
   case index
-  of 0: result = version.major
-  of 1: result = version.minor
-  of 2: result = version.patch
+  of 0: version.major
+  of 1: version.minor
+  of 2: version.patch
 
 proc `[]=`*(mask: var VersionMask;
             index: VersionIndex; value: VersionMaskField) =

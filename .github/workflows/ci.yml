@@ -52,7 +52,7 @@ jobs:
         shell: bash
         run: |
           cd project
-          balls
+          balls --path="."
 
       - name: Build docs
         if: ${{ matrix.docs }} == 'true'

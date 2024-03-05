@@ -52,6 +52,8 @@ converter toVersion(t: (int|uint, int|uint, int|uint)): Version =
 const
   invalidVersion = toVersion (0'u, 0'u, 0'u)  ## for comparison purposes
   Wildlings* = {Wild, Caret, Tilde}           ## mavericks of the version world
+  nimVersion* =
+    Version(major: NimMajor.uint, minor: NimMinor.uint, patch: NimPatch.uint)
 
 proc `<`*(a, b: Version): bool =
   (a.major, a.minor, a.patch) < (b.major, b.minor, b.patch)

@@ -27,11 +27,12 @@ let compilerPeg* = peg("nimversion", nv: CompilerVersion):
 
   S <- *{' ','\t','\n','\r'}
   nimversion <- oldnim_version | nimskull_version
+  four_digits <- {'0'..'9'}[4]
 
   oldnim_version <- header * S *
                     "Compiled at " * date * S *
-                    "Copyright (c) 2006-2024 by Andreas Rumpf" * S *
-                    "git hash:" * S * git * S *
+                    "Copyright (c) " * four_digits * "-" * four_digits * S *
+                    "by Andreas Rumpf" * S * "git hash:" * S * git * S *
                     "active boot switches:" * S * boot_switches
 
   nimskull_version <- header * S *

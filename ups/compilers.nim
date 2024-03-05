@@ -32,7 +32,7 @@ let compilerPeg* = peg("nimversion", nv: CompilerVersion):
   oldnim_version <- header * S *
                     "Compiled at " * date * S *
                     "Copyright (c) " * four_digits * "-" * four_digits * S *
-                    "by Andreas Rumpf" * ?hash_area * S *
+                    "by Andreas Rumpf" * S * ?hash_area *
                     "active boot switches:" * S * boot_switches
 
   nimskull_version <- header * S *

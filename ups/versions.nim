@@ -1,3 +1,4 @@
+import std/macros
 import std/hashes
 import std/strutils
 import std/tables
@@ -44,6 +45,13 @@ type
       accepts*: VersionMask
     of Equal, AtLeast, Over, Under, NotMore:
       version*: Version
+
+macro V*(a, b, c: typed): untyped =
+  ## compose a Version object more simply; this massages the fields.
+  result = nnkObjConstr.newTree(bindSym"Version",
+    newColonExpr(ident"major", newCall(bindSym"uint", a)),
+    newColonExpr(ident"minor", newCall(bindSym"uint", b)),
+    newColonExpr(ident"patch", newCall(bindSym"uint", c)))
 
 converter toVersion(t: (int|uint, int|uint, int|uint)): Version =
   ## internal converter to simplify expressions

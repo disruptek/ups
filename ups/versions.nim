@@ -61,6 +61,9 @@ proc `<`*(a, b: Version): bool =
 proc `==`*(a, b: Version): bool =
   (a.major, a.minor, a.patch) == (b.major, b.minor, b.patch)
 
+proc `<=`*(a, b: Version): bool =
+  (a.major, a.minor, a.patch) <= (b.major, b.minor, b.patch)
+
 proc hash*(v: Version): Hash =
   hash (v.major, v.minor, v.patch)
 

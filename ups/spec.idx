@@ -1,0 +1,61 @@
+nimTitle	spec	ups/spec.html	module ups/spec		0
+nim	ForkTargetResult	ups/spec.html#ForkTargetResult	object ForkTargetResult		12
+nim	ImportName	ups/spec.html#ImportName	type ImportName		19
+nim	PackageName	ups/spec.html#PackageName	type PackageName		20
+nim	DotNimble	ups/spec.html#DotNimble	type DotNimble		21
+nim	dotNimble	ups/spec.html#dotNimble_2	const dotNimble		24
+nim	dotNimbleLink	ups/spec.html#dotNimbleLink	const dotNimbleLink		25
+nim	dotGit	ups/spec.html#dotGit	const dotGit		26
+nim	dotHg	ups/spec.html#dotHg	const dotHg		27
+nim	DepDir	ups/spec.html#DepDir	const DepDir		28
+nim	PkgDir	ups/spec.html#PkgDir	const PkgDir		29
+nim	NimCfg	ups/spec.html#NimCfg	const NimCfg		30
+nim	ghTokenFn	ups/spec.html#ghTokenFn	const ghTokenFn		31
+nim	ghTokenEnv	ups/spec.html#ghTokenEnv	const ghTokenEnv		32
+nim	nimbleMeta	ups/spec.html#nimbleMeta	const nimbleMeta		33
+nim	officialPackages	ups/spec.html#officialPackages	const officialPackages		34
+nim	emptyRelease	ups/spec.html#emptyRelease	const emptyRelease		35
+nim	defaultRemote	ups/spec.html#defaultRemote	const defaultRemote		36
+nim	upstreamRemote	ups/spec.html#upstreamRemote	const upstreamRemote		37
+nim	excludeMissingSearchPaths	ups/spec.html#excludeMissingSearchPaths	const excludeMissingSearchPaths		38
+nim	excludeMissingLazyPaths	ups/spec.html#excludeMissingLazyPaths	const excludeMissingLazyPaths		39
+nim	writeNimbleDirPaths	ups/spec.html#writeNimbleDirPaths	const writeNimbleDirPaths		40
+nim	WhatHappensInVegas	ups/spec.html#WhatHappensInVegas	const WhatHappensInVegas		43
+nim	`$`	ups/spec.html#$,DotNimble	proc `$`(file: DotNimble): string		45
+nim	`$`	ups/spec.html#$,ImportName	proc `$`(name: ImportName): string		46
+nim	`$`	ups/spec.html#$,PackageName	proc `$`(name: PackageName): string		47
+nim	`==`	ups/spec.html#==,ImportName,ImportName	proc `==`(a, b: ImportName): bool		49
+nim	`==`	ups/spec.html#==,PackageName,PackageName	proc `==`(a, b: PackageName): bool		50
+nim	`<`	ups/spec.html#<,ImportName,ImportName	proc `<`(a, b: ImportName): bool		51
+nim	`<`	ups/spec.html#<,PackageName,PackageName	proc `<`(a, b: PackageName): bool		52
+nim	hash	ups/spec.html#hash,ImportName	proc hash(name: ImportName): Hash		54
+nim	hash	ups/spec.html#hash,PackageName	proc hash(name: PackageName): Hash		55
+nim	repo	ups/spec.html#repo.t,DotNimble	template repo(file: DotNimble): string		57
+nim	package	ups/spec.html#package.t,DotNimble	template package(file: DotNimble): string		60
+nim	ext	ups/spec.html#ext.t,DotNimble	template ext(file: DotNimble): string		63
+nim	toDotNimble	ups/spec.html#toDotNimble,AbsoluteFile	proc toDotNimble(file: AbsoluteFile): DotNimble		66
+nim	fileExists	ups/spec.html#fileExists,DotNimble	proc fileExists(file: DotNimble): bool		69
+nim	isValid	ups/spec.html#isValid.t,Uri	template isValid(url: Uri): bool		71
+nim	hash	ups/spec.html#hash,Uri	proc hash(url: Uri): Hash		83
+nim	bare	ups/spec.html#bare,Uri	proc bare(url: Uri): Uri		94
+nim	bareUrlsAreEqual	ups/spec.html#bareUrlsAreEqual,Uri,Uri	proc bareUrlsAreEqual(a, b: Uri): bool		98
+nim	normalizeUrl	ups/spec.html#normalizeUrl,Uri	proc normalizeUrl(uri: Uri): Uri		106
+nim	convertToGit	ups/spec.html#convertToGit,Uri	proc convertToGit(uri: Uri): Uri		120
+nim	convertToSsh	ups/spec.html#convertToSsh,Uri	proc convertToSsh(uri: Uri): Uri		128
+nim	packageName	ups/spec.html#packageName,string	proc packageName(name: string; capsOkay = true): PackageName		139
+nim	packageName	ups/spec.html#packageName,Uri	proc packageName(url: Uri): PackageName		147
+nim	importName	ups/spec.html#importName,string	proc importName(s: string; capsOkay = true): ImportName		156
+nim	importName	ups/spec.html#importName,ImportName	proc importName(name: ImportName): ImportName		167
+nim	importName	ups/spec.html#importName,PackageName	proc importName(name: PackageName): ImportName		169
+nim	importName	ups/spec.html#importName,AbsoluteFile	proc importName(path: AbsoluteFile): ImportName		173
+nim	importName	ups/spec.html#importName,AbsoluteDir	proc importName(path: AbsoluteDir): ImportName		179
+nim	importName	ups/spec.html#importName,DotNimble	proc importName(file: DotNimble): ImportName		186
+nim	importName	ups/spec.html#importName,Uri	proc importName(url: Uri): ImportName		190
+nim	forkTarget	ups/spec.html#forkTarget,Uri	proc forkTarget(url: Uri): ForkTargetResult		200
+nim	virtualNimImports	ups/spec.html#virtualNimImports	const virtualNimImports		224
+nimgrp	importname	ups/spec.html#importName-procs-all	proc		156
+nimgrp	$	ups/spec.html#$-procs-all	proc		45
+nimgrp	<	ups/spec.html#<-procs-all	proc		51
+nimgrp	packagename	ups/spec.html#packageName-procs-all	proc		139
+nimgrp	==	ups/spec.html#==-procs-all	proc		49
+nimgrp	hash	ups/spec.html#hash-procs-all	proc		54

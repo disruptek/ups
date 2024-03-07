@@ -1,0 +1,68 @@
+nimTitle	versions	ups/versions.html	module ups/versions		0
+nim	Version	ups/versions.html#Version	object Version		13
+nim	VersionField	ups/versions.html#VersionField	type VersionField		17
+nim	VersionIndex	ups/versions.html#VersionIndex	type VersionIndex		18
+nim	VersionMask	ups/versions.html#VersionMask	object VersionMask		20
+nim	VersionMaskField	ups/versions.html#VersionMaskField	type VersionMaskField		25
+nim	Tag	ups/versions.html#Tag	Operator.Tag		27
+nim	Wild	ups/versions.html#Wild	Operator.Wild		27
+nim	Tilde	ups/versions.html#Tilde	Operator.Tilde		27
+nim	Caret	ups/versions.html#Caret	Operator.Caret		27
+nim	Equal	ups/versions.html#Equal	Operator.Equal		27
+nim	AtLeast	ups/versions.html#AtLeast	Operator.AtLeast		27
+nim	Over	ups/versions.html#Over	Operator.Over		27
+nim	Under	ups/versions.html#Under	Operator.Under		27
+nim	NotMore	ups/versions.html#NotMore	Operator.NotMore		27
+nim	Operator	ups/versions.html#Operator	enum Operator		27
+nim	Release	ups/versions.html#Release	object Release		39
+nim	V	ups/versions.html#V.m,typed,typed,typed	macro V(a, b, c: typed): untyped		49
+nim	Wildlings	ups/versions.html#Wildlings	const Wildlings		62
+nim	nimVersion	ups/versions.html#nimVersion	const nimVersion		63
+nim	`<`	ups/versions.html#<,Version,Version	proc `<`(a, b: Version): bool		66
+nim	`==`	ups/versions.html#==,Version,Version	proc `==`(a, b: Version): bool		69
+nim	`<=`	ups/versions.html#<=,Version,Version	proc `<=`(a, b: Version): bool		72
+nim	hash	ups/versions.html#hash,Version	proc hash(v: Version): Hash		75
+nim	`$`	ups/versions.html#$,Version	proc `$`(v: Version): string		78
+nim	bumpVersion	ups/versions.html#bumpVersion,Version	proc bumpVersion(ver: Version; major = false; minor = false; patch = false): Option[\n    Version]		85
+nim	parseDottedVersion	ups/versions.html#parseDottedVersion,string	proc parseDottedVersion(input: string): Option[Version]		104
+nim	isValid	ups/versions.html#isValid,Version	proc isValid(v: Version): bool		128
+nim	isValid	ups/versions.html#isValid,Release	proc isValid(release: Release): bool		132
+nim	newRelease	ups/versions.html#newRelease,Version	proc newRelease(version: Version): Release		153
+nim	newRelease	ups/versions.html#newRelease,string	proc newRelease(reference: string; operator = Equal): Release		157
+nim	parseVersionLoosely	ups/versions.html#parseVersionLoosely,string	proc parseVersionLoosely(content: string): Option[Release]		159
+nim	`$`	ups/versions.html#$,VersionMaskField	proc `$`(field: VersionMaskField): string		201
+nim	`$`	ups/versions.html#$,VersionMask	proc `$`(mask: VersionMask): string		207
+nim	omitStars	ups/versions.html#omitStars,VersionMask	proc omitStars(mask: VersionMask): string		212
+nim	`$`	ups/versions.html#$,Release	proc `$`(spec: Release): string		219
+nim	`==`	ups/versions.html#==,VersionMaskField,VersionMaskField	proc `==`(a, b: VersionMaskField): bool		228
+nim	`<`	ups/versions.html#<,VersionMaskField,VersionMaskField	proc `<`(a, b: VersionMaskField): bool		233
+nim	`==`	ups/versions.html#==,VersionMask,VersionMask	proc `==`(a, b: VersionMask): bool		238
+nim	`==`	ups/versions.html#==,Release,Release	proc `==`(a, b: Release): bool		243
+nim	`<`	ups/versions.html#<,Release,Release	proc `<`(a, b: Release): bool		253
+nim	`<=`	ups/versions.html#<=,Release,Release	proc `<=`(a, b: Release): bool		263
+nim	`==`	ups/versions.html#==,VersionMask,Version	proc `==`(a: VersionMask; b: Version): bool		266
+nim	acceptable	ups/versions.html#acceptable,VersionMaskField,Operator,VersionField	proc acceptable(mask: VersionMaskField; op: Operator; value: VersionField): bool		272
+nim	at	ups/versions.html#at,T,VersionIndex	proc at[T: Version | VersionMask](version: T; index: VersionIndex): auto		287
+nim	`[]=`	ups/versions.html#[]=,VersionMask,VersionIndex,VersionMaskField	proc `[]=`(mask: var VersionMask; index: VersionIndex; value: VersionMaskField)		294
+nim	items	ups/versions.html#items.i,T	iterator items[T: Version | VersionMask](version: T): auto		301
+nim	pairs	ups/versions.html#pairs.i,T	iterator pairs[T: Version | VersionMask](version: T): auto		305
+nim	isSpecific	ups/versions.html#isSpecific,Release	proc isSpecific(release: Release): bool		309
+nim	specifically	ups/versions.html#specifically,Release	proc specifically(release: Release): Version		318
+nim	effectively	ups/versions.html#effectively,VersionMask	proc effectively(mask: VersionMask): Version		331
+nim	effectively	ups/versions.html#effectively,Release	proc effectively(release: Release): Version		342
+nim	hash	ups/versions.html#hash,VersionMaskField	proc hash(field: VersionMaskField): Hash		359
+nim	hash	ups/versions.html#hash,VersionMask	proc hash(mask: VersionMask): Hash		368
+nim	hash	ups/versions.html#hash,Release	proc hash(release: Release): Hash		376
+nim	toMask	ups/versions.html#toMask,Version	proc toMask(version: Version): VersionMask		389
+nim	likelyTags	ups/versions.html#likelyTags.i,Version	iterator likelyTags(version: Version): string		394
+nim	semanticVersionStrings	ups/versions.html#semanticVersionStrings.i,VersionMask	iterator semanticVersionStrings(mask: VersionMask): string		403
+nim	semanticVersionStrings	ups/versions.html#semanticVersionStrings.i,Version	iterator semanticVersionStrings(version: Version): string		419
+nimgrp	$	ups/versions.html#$-procs-all	proc		78
+nimgrp	<=	ups/versions.html#<=-procs-all	proc		72
+nimgrp	isvalid	ups/versions.html#isValid-procs-all	proc		128
+nimgrp	effectively	ups/versions.html#effectively-procs-all	proc		331
+nimgrp	<	ups/versions.html#<-procs-all	proc		66
+nimgrp	==	ups/versions.html#==-procs-all	proc		69
+nimgrp	hash	ups/versions.html#hash-procs-all	proc		75
+nimgrp	newrelease	ups/versions.html#newRelease-procs-all	proc		153
+nimgrp	semanticversionstrings	ups/versions.html#semanticVersionStrings-iterators-all	iterator		403

@@ -1,0 +1,9 @@
+nimTitle	compilers	ups/compilers.html	module ups/compilers		0
+nim	Nim	ups/compilers.html#Nim	CompilerLanguage.Nim		13
+nim	NimSkull	ups/compilers.html#NimSkull	CompilerLanguage.NimSkull		13
+nim	NLVM	ups/compilers.html#NLVM	CompilerLanguage.NLVM		13
+nim	CompilerLanguage	ups/compilers.html#CompilerLanguage	enum CompilerLanguage		13
+nim	CompilerVersion	ups/compilers.html#CompilerVersion	object CompilerVersion		18
+nim	compilerPeg	ups/compilers.html#compilerPeg	let compilerPeg		29
+nim	parseCompilerVersion	ups/compilers.html#parseCompilerVersion,string	proc parseCompilerVersion(s: string): Option[CompilerVersion]		64
+nim	runCompilerVersion	ups/compilers.html#runCompilerVersion,string	proc runCompilerVersion(exe: string = ""): Option[CompilerVersion]		70

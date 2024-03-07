@@ -1,0 +1,23 @@
+nimTitle	config	ups/config.html	module ups/config		0
+nim	ProjectCfgParsed	ups/config.html#ProjectCfgParsed	object ProjectCfgParsed		33
+nim	parseConfigFile	ups/config.html#parseConfigFile,AbsoluteFile	proc parseConfigFile(path: AbsoluteFile): Option[ConfigRef]		81
+nim	loadAllCfgs	ups/config.html#loadAllCfgs,string	proc loadAllCfgs(directory: string): ConfigRef		133
+nim	createTemporaryFile	ups/config.html#createTemporaryFile,string,string	proc createTemporaryFile(prefix: string; suffix: string): AbsoluteFile		172
+nim	appendConfig	ups/config.html#appendConfig,AbsoluteFile,string	proc appendConfig(path: AbsoluteFile; config: string): bool		183
+nim	parseProjectCfg	ups/config.html#parseProjectCfg,AbsoluteFile	proc parseProjectCfg(input: AbsoluteFile): ProjectCfgParsed		226
+nim	isStdlib	ups/config.html#isStdlib.t,ConfigRef,AbsoluteDir	template isStdlib(config: ConfigRef; path: AbsoluteDir): bool		268
+nim	likelySearch	ups/config.html#likelySearch.i,ConfigRef,bool	iterator likelySearch(config: ConfigRef; libsToo: bool): AbsoluteDir		271
+nim	likelySearch	ups/config.html#likelySearch.i,ConfigRef,AbsoluteDir,bool	iterator likelySearch(config: ConfigRef; repo: AbsoluteDir; libsToo: bool): AbsoluteDir		278
+nim	likelyLazy	ups/config.html#likelyLazy.i,ConfigRef,int	iterator likelyLazy(config: ConfigRef; least = 0): AbsoluteDir		289
+nim	likelyLazy	ups/config.html#likelyLazy.i,ConfigRef,AbsoluteDir,int	iterator likelyLazy(config: ConfigRef; repo: AbsoluteDir; least = 0): AbsoluteDir		314
+nim	packagePaths	ups/config.html#packagePaths.i,ConfigRef	iterator packagePaths(config: ConfigRef; exists = true): AbsoluteDir		325
+nim	suggestNimbleDir	ups/config.html#suggestNimbleDir,ConfigRef,AbsoluteDir,AbsoluteDir	proc suggestNimbleDir(config: ConfigRef; local: AbsoluteDir; global: AbsoluteDir): AbsoluteDir		346
+nim	removeSearchPath	ups/config.html#removeSearchPath,ConfigRef,AbsoluteFile,AbsoluteDir	proc removeSearchPath(config: ConfigRef; nimcfg: AbsoluteFile; path: AbsoluteDir): bool		472
+nim	addSearchPath	ups/config.html#addSearchPath,ConfigRef,AbsoluteFile,AbsoluteDir	proc addSearchPath(config: ConfigRef; nimcfg: AbsoluteFile; path: AbsoluteDir): bool		492
+nim	excludeSearchPath	ups/config.html#excludeSearchPath,ConfigRef,AbsoluteFile,AbsoluteDir	proc excludeSearchPath(config: ConfigRef; nimcfg: AbsoluteFile; path: AbsoluteDir): bool		499
+nim	extantSearchPaths	ups/config.html#extantSearchPaths.i,ConfigRef,int	iterator extantSearchPaths(config: ConfigRef; least = 0): AbsoluteDir		506
+nim	addLockerRoom	ups/config.html#addLockerRoom,JsonNode,string,JsonNode	proc addLockerRoom(js: var JsonNode; name: string; room: JsonNode)		522
+nim	getAllLockerRooms	ups/config.html#getAllLockerRooms,JsonNode	proc getAllLockerRooms(js: JsonNode): JsonNode		530
+nim	getLockerRoom	ups/config.html#getLockerRoom,JsonNode,string	proc getLockerRoom(js: JsonNode; name: string): JsonNode		539
+nimgrp	likelysearch	ups/config.html#likelySearch-iterators-all	iterator		271
+nimgrp	likelylazy	ups/config.html#likelyLazy-iterators-all	iterator		289

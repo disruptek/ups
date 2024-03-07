@@ -1,0 +1,4 @@
+nimTitle	runner	ups/runner.html	module ups/runner		0
+nim	RunOutput	ups/runner.html#RunOutput	object RunOutput		11
+nim	stripPkgs	ups/runner.html#stripPkgs,AbsoluteDir	proc stripPkgs(nimbleDir: AbsoluteDir): AbsoluteDir		16
+nim	runSomething	ups/runner.html#runSomething,string,seq[string],set[ProcessOption]	proc runSomething(exe: string; args: seq[string]; options: set[ProcessOption];\n             nimbleDir = AbsoluteDir""): RunOutput		24

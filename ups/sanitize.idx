@@ -1,0 +1,10 @@
+nimTitle	sanitize	ups/sanitize.html	module ups/sanitize		0
+nim	NimIdentifier	ups/sanitize.html#NimIdentifier	type NimIdentifier		9
+nim	nimIdentNormalize	ups/sanitize.html#nimIdentNormalize,string	proc nimIdentNormalize(s: string): string		13
+nim	isValidNimIdentifier	ups/sanitize.html#isValidNimIdentifier,string	proc isValidNimIdentifier(s: string): bool		27
+nim	sanitizeIdentifier	ups/sanitize.html#sanitizeIdentifier,string	proc sanitizeIdentifier(name: string; capsOkay = false): Option[NimIdentifier]		52
+nim	`$`	ups/sanitize.html#$,NimIdentifier	proc `$`(name: NimIdentifier): string		85
+nim	len	ups/sanitize.html#len,NimIdentifier	proc len(name: NimIdentifier): int		86
+nim	`==`	ups/sanitize.html#==,NimIdentifier,NimIdentifier	proc `==`(a, b: NimIdentifier): bool		88
+nim	`<`	ups/sanitize.html#<,NimIdentifier,NimIdentifier	proc `<`(a, b: NimIdentifier): bool		91
+nim	hash	ups/sanitize.html#hash,NimIdentifier	proc hash(name: NimIdentifier): Hash		94

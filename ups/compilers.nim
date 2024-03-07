@@ -10,7 +10,10 @@ import ups/versions
 import ups/runner
 
 type
-  CompilerLanguage* = enum Nim, NimSkull
+  CompilerLanguage* = enum
+    Nim
+    NimSkull
+    NLVM = "nlvm"
 
   CompilerVersion* = object
     language*: CompilerLanguage
